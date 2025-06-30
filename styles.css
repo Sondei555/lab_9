@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('fonts/MyWebFont.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'CustomFont', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header, .footer {
+  background: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+.menu {
+  background: #2196F3;
+  padding: 1em;
+  color: white;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+  padding: 1em;
+  overflow-y: auto;
+  background: white;
+  width: calc(100% - 40px);
+}
+
+.sidebar {
+  background: #FFC107;
+  padding: 1em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .content-area {
+    display: flex;
+    flex: 1;
+  }
+
+  .content {
+    flex: 3;
+  }
+
+  .sidebar {
+    flex: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .menu, .sidebar {
+    order: 2;
+  }
+
+  .content {
+    order: 1;
+  }
+}
+
+@media print {
+  .menu, .sidebar, .footer {
+    display: none;
+  }
+
+  .content {
+    font-size: 14pt;
+    color: black;
+  }
+}
+
+.content::after {
+  content: "Поточне ім’я класу: " attr(class);
+  display: block;
+  margin-top: 20px;
+  font-style: italic;
+  color: gray;
+}
