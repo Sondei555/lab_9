@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна 9 (Завдання 3): Зовнішні Шрифти</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap'); 
+
+        @font-face { 
+            font-family: 'MyFiraWebFont'; 
+            src: url('FiraSans-Regular.woff2') format('woff2'), 
+                 url('FiraSans-Regular.woff') format('woff'); 
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%; 
+            font-family: 'MyFiraWebFont', sans-serif; 
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+        }
+        
+        h2, h3 { 
+            margin-top: 0; 
+            font-family: 'Caveat', cursive; 
+            font-weight: 700;
+        }
+        
+        .block {
+            border: 2px solid #333;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .block-1, .block-6 { background-color: #f7d747; }
+        .block-2, .block-5 { background-color: #366fa9; color: white; }
+        .block-3 { background-color: #f06292; color: white; }
+        .block-4 { background-color: #fff; }
+        
+        .middle-row {
+            display: flex;
+            flex: 1;
+            gap: 5px;
+            min-height: 50vh; 
+        }
+
+        .block-2, .block-3, .block-4, .block-5 {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .scroll-content {
+            overflow-y: auto;
+            max-height: 250px;
+            text-align: left;
+            padding: 0 5px;
+        }
+
+        @media (max-width: 767px) {
+            .middle-row { flex-direction: column; }
+            .scroll-content { max-height: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="block block-1">
+            <h2>Блок 1: Вступ до Flexbox</h2>
+            <p>Шапка сторінки. Ця робота демонструє верстку за допомогою **Flexbox** (Варіант 5).</p>
+        </div>
+        
+        <div class="middle-row">
+            
+            <div class="block block-2">
+                <h3>Блок 2: Роль у війську</h3>
+                <p>Характерники часто виступали в ролі **духовних наставників**</p>
+                 <p>та **цілителів**, займаючись</p>
+                 <p> **фізичною та психологічною підготовкою козаків**.</p>
+                <p>Їхня присутність надихала військо</p>
+                <p> та вселяла страх у ворогів.</p>
+            </div>
+
+            <div class="block block-3">
+                <h3>Блок 3: Магічні здібності (Scroll)</h3>
+                <div class="scroll-content">
+                    <p>
+                        Характерникам приписували **надзвичайні, магічні здібності**.</p>
+                        </p>Вони вважалися воїнами з особливими вміннями:</p>
+                        <p> **невразливість**, **здатність до перевтілення**,</p>
+                        <p> **вплив на погоду**, **гіпноз**, та **зцілення**.
+                    </p>
+                    
+                    <h4>Детальніше про здібності:</h4>
+                    <ul>
+                        <li><p>**Телепатія та ясновидіння:**</p> <p>Здатність читати думки та бачити майбутнє.<p></li>
+                        <li><p>**Невидимість та перевтілення:**</p> <p>Вміння ставати невидимими або змінювати зовнішність.<p></li>
+                        <li><p>**Фізична витривалість:**</p> <p>Можливість ходити по воді, витримувати екстремальний холод та вогонь.<p></li>
+                        <li><p>**Лікування:**</p> <p>Володіння мистецтвом цілительства та знаннями трав.</p></li>
+                    </ul>
+                    <p>
+                        Їх образ часто фігурує в **народних легендах та переказах**.
+                    </p>
+                    <p>
+                      Хоча історичні документи іноді описували</p>
+                    <p> їх як чаклунів, у народній пам'яті</p>
+                    </p>вони залишилися як позитивні герої та захисники народу.
+                    </p>
+                </div>
+            </div>
+
+            <div class="block block-4">
+                <h3>Блок 4: Походження терміну</h3>
+                <p>Походження слова **"характерник"** достеменно невідоме.</p>
+                <p>Одна з версій припускає, що термін пов'язаний</p>
+                </p>зі словом **"характер"**, що відображає</p>
+                <p> їхню виняткову **силу волі та внутрішню міць**.</p>
+            </div>
+
+            <div class="block block-5">
+                <h3>Блок 5: Видатні постаті</h3>
+                <p>Серед відомих характерників часто згадують</p>
+                <p>кошового отамана **Івана Сірка**,</p>
+                <p>якому приписували здатність перетворюватися на вовка.</p>
+                <p>Також важливим є образ **козака Мамая**,</p>
+                <p>який уособлює мудрість, силу та незламний козацький дух.</p>
+            </div>
+            
+        </div>
+        
+        <div class="block block-6">
+            <h2>Блок 6: Технічний футер</h2>
+            <p>**Івано-Франківськ 2025**</p>
+        </div>
+
+    </div>
+</body>
+</html>
